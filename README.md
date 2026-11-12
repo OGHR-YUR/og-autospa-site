@@ -120,3 +120,10 @@ Language:
   <url><loc>https://REPLACE-WITH-YOUR-DOMAIN.com/shop.html</loc><lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
 </urlset>
 
+
+
+---
+
+## Customer app scaffold
+
+The customer-facing app lives in [`og-autospa-app/`](./og-autospa-app/). See that folder’s README for run instructions (Vite + React). Intended eventual standalone repo name: `og-autospa-app`.
