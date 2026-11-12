@@ -16,7 +16,7 @@ Plain HTML + CSS + JavaScript. No build step, no frameworks, no npm. The only ou
 >    - `BOOKING_URL` in `js/config.js` (my Acuity Scheduling link)
 >    - `FORM_ENDPOINT` in `js/config.js` (Formspree form URL, or leave as is to use email)
 >    - `SOCIAL` links in `js/config.js` (Instagram, TikTok, Facebook, Google Business)
->    - My domain: replace every `REPLACE-WITH-YOUR-DOMAIN.com` (in all `.html` files, `robots.txt` and `sitemap.xml`). If I use a custom domain on GitHub Pages, add a `CNAME` file containing it.
+>    - Domain is set to `ogautosspaservices.com` (canonicals, sitemap, robots, GitHub Pages `CNAME`).
 >    - Photos: when I give you image files, put them in `assets/images/` and list them under `PHOTOS` in `js/config.js`.
 > 5. After each change, commit with a clear message and confirm the live site updated.
 
@@ -39,6 +39,7 @@ og-autospa-site/
 ├── assets/             Logo, favicon, share image, photos (see assets/README.md)
 ├── robots.txt
 ├── sitemap.xml
+├── CNAME               GitHub Pages custom domain → ogautosspaservices.com
 └── README.md
 ```
 
@@ -49,12 +50,11 @@ og-autospa-site/
 | `js/config.js` | `BOOKING_URL: "https://REPLACE-WITH-ACUITY-LINK"` | Your Acuity scheduling page link. Until set, "Book Now" goes to `book.html`, which shows "call or text" instead of a calendar. |
 | `js/config.js` | `FORM_ENDPOINT` (`…/f/REPLACE-WITH-FORM-ID`) | A free Formspree form URL. Until set, the contact form opens the visitor's email app addressed to you. |
 | `js/config.js` | `SOCIAL` (`REPLACE`) | Your social links. Any left as `REPLACE` or `""` are hidden automatically. |
-| all `.html`, `robots.txt`, `sitemap.xml` | `https://REPLACE-WITH-YOUR-DOMAIN.com` | Your real domain (used for Google/SEO and share previews). Find-and-replace across the repo. |
 | `js/config.js` → `PHOTOS` | empty | Hero before/after, van, gallery photos (see `assets/README.md`). |
 | `index.html` reviews section | "Customer review placeholder" cards | **Real** reviews only, with the customer's permission. |
 | `services.html` | `<!-- REPLACE -->` comments | Optional: extra add-ons, vehicle size definitions. |
 
-Already filled in: phone `(385) 346-8125`, email `o.g.autospa.services@gmail.com`, service area, hours, 7.45% tax, $50 after-hours fee, 50% deposit, Shopify store `https://11u81s-f0.myshopify.com`.
+Already filled in: domain `ogautosspaservices.com`, phone `(385) 346-8125`, email `o.g.autospa.services@gmail.com`, service area, hours, 7.45% tax, $50 after-hours fee, 50% deposit, Shopify store `https://11u81s-f0.myshopify.com`.
 
 ## How to edit
 
@@ -86,11 +86,11 @@ Already filled in: phone `(385) 346-8125`, email `o.g.autospa.services@gmail.com
 4. Create. Add a custom domain under *Settings → Custom Domains*.
 5. Render serves `404.html` for missing pages; if it doesn't, add a Rewrite rule `/*` → `/404.html` (status 404) under *Redirects/Rewrites*.
 
-After deploying with your real domain:
-- Replace `REPLACE-WITH-YOUR-DOMAIN.com` everywhere.
-- Submit `https://yourdomain.com/sitemap.xml` in Google Search Console.
+After deploying:
+- Custom domain in repo is `ogautosspaservices.com` (`CNAME` + canonicals/sitemap/robots). Point DNS at your host (Squarespace registrar → GitHub Pages or Render).
+- Submit `https://ogautosspaservices.com/sitemap.xml` in Google Search Console.
 - Put your website link on your Google Business Profile, Instagram bio and Acuity.
-- If you use Apple Pay in the Acuity embed with Stripe, register the domain in Stripe (Settings → Payment methods → Apple Pay domains).
+- If you use Apple Pay in the Acuity embed with Stripe, register `ogautosspaservices.com` in Stripe (Settings → Payment methods → Apple Pay domains).
 
 ## Notes
 - **SEO:** each page has its own title, description, Open Graph and Twitter tags. `index.html` and `contact.html` include LocalBusiness JSON-LD (`AutoWash` / `AutomotiveBusiness`) with phone, email, hours and service area. No street address, ratings or reviews are included on purpose; add a real `aggregateRating` only once you have real reviews.
@@ -98,29 +98,6 @@ After deploying with your real domain:
 - **No JavaScript?** The pages still read fine; prices and the booking calendar need JavaScript.
 - **Merch art:** the back print shows real car models. Brand likenesses (e.g. Ferrari) can draw takedown requests on marketplaces; consider a generic-car version for public sale.
 - `404.html` uses relative links, so on a GitHub Pages *project* URL (`/repo/`) it works best once you're on a custom domain at the root.
-
-File name: robots.txt
-Language: 
-User-agent: *
-Allow: /
-
-# REPLACE the domain below with your real domain
-Sitemap: https://REPLACE-WITH-YOUR-DOMAIN.com/sitemap.xml
-
-File name: sitemap.xml
-Language: 
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- REPLACE "REPLACE-WITH-YOUR-DOMAIN.com" with your real domain -->
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://REPLACE-WITH-YOUR-DOMAIN.com/</loc><lastmod>2026-11-03</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://REPLACE-WITH-YOUR-DOMAIN.com/services.html</loc><lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://REPLACE-WITH-YOUR-DOMAIN.com/book.html</loc><lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://REPLACE-WITH-YOUR-DOMAIN.com/gallery.html</loc><lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://REPLACE-WITH-YOUR-DOMAIN.com/contact.html</loc><lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://REPLACE-WITH-YOUR-DOMAIN.com/shop.html</loc><lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-</urlset>
-
-
 
 ---
 
