@@ -63,10 +63,7 @@ export function HomePage() {
               Close
             </button>
           </div>
-          <BookingPanel
-            initialServiceId={bookingService}
-            onBooked={() => setBookingService(null)}
-          />
+          <BookingPanel initialServiceId={bookingService} />
         </section>
       )}
     </div>

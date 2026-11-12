@@ -122,6 +122,9 @@ export interface ServiceJob {
   chargeAmountCents?: number
   chargeMessage?: string
   reviewPromptDismissed?: boolean
+  /** True when the guest booked without vehicle photos. */
+  priceSubjectToCondition?: boolean
+  photoNames?: string[]
 }
 
 export interface LoyaltyLedgerEntry {
@@ -159,11 +162,16 @@ export interface Referral {
 
 export interface BookingDraft {
   serviceId: ServiceId
-  vehicleId: string
+  year: number
+  make: string
+  model: string
+  size: VehicleSize
   date: string
   time: string
   notes: string
   tipCents: number
+  photoNames: string[]
+  priceSubjectToCondition: boolean
 }
 
 export interface AppState {

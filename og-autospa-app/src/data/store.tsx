@@ -17,6 +17,7 @@ import type {
   RewardTier,
   ServiceJob,
   StoredPaymentMethod,
+  Vehicle,
 } from '../types'
 
 const STORAGE_KEY = 'og-autospa-app-state-v2'
@@ -68,16 +69,26 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
   const bookService = useCallback(
     async (draft: BookingDraft) => {
       const scheduledAt = new Date(`${draft.date}T${draft.time}:00`).toISOString()
+      const vehicle: Vehicle = {
+        id: `veh_${Math.random().toString(36).slice(2, 9)}`,
+        year: draft.year,
+        make: draft.make.trim(),
+        model: draft.model.trim(),
+        size: draft.size,
+        color: '',
+      }
       const job: ServiceJob = {
         id: `job_${Math.random().toString(36).slice(2, 9)}`,
         customerId: state.customer.id,
-        vehicleId: draft.vehicleId,
+        vehicleId: vehicle.id,
         serviceId: draft.serviceId,
         status: 'scheduled',
         scheduledAt,
         notes: draft.notes || undefined,
         tipCents: draft.tipCents > 0 ? draft.tipCents : undefined,
         tipStatus: draft.tipCents > 0 ? 'pending' : undefined,
+        priceSubjectToCondition: draft.priceSubjectToCondition,
+        photoNames: draft.photoNames.length ? draft.photoNames : undefined,
       }
 
       if (draft.tipCents > 0) {
@@ -101,6 +112,10 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
 
       setState((prev) => ({
         ...prev,
+        customer: {
+          ...prev.customer,
+          vehicles: [vehicle, ...prev.customer.vehicles],
+        },
         jobs: [job, ...prev.jobs],
         ledger: [bookLedger, ...prev.ledger],
       }))
