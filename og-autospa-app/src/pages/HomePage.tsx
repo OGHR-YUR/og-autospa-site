@@ -8,6 +8,7 @@ import type { ServiceId } from '../types'
 export function HomePage() {
   const popular = POPULAR_SERVICE_IDS.map((id) => SERVICES.find((s) => s.id === id)!).filter(Boolean)
   const [bookingService, setBookingService] = useState<ServiceId | null>(null)
+  const [missionOpen, setMissionOpen] = useState(false)
 
   return (
     <div className="page page-home">
@@ -21,10 +22,20 @@ export function HomePage() {
       <section className="mission-pin" aria-labelledby="mission-title">
         <p className="eyebrow">Our mission</p>
         <h2 id="mission-title">{BUSINESS.name}</h2>
-        {BUSINESS.missionParagraphs.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
-        ))}
-        <p className="mission-pin__close">{BUSINESS.missionClose}</p>
+        <div className={missionOpen ? 'mission-pin__body is-open' : 'mission-pin__body'}>
+          {BUSINESS.missionParagraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+          <p className="mission-pin__close">{BUSINESS.missionClose}</p>
+        </div>
+        <button
+          type="button"
+          className="btn btn-ghost mission-pin__more"
+          aria-expanded={missionOpen}
+          onClick={() => setMissionOpen((open) => !open)}
+        >
+          {missionOpen ? 'Show less' : 'Click for more'}
+        </button>
       </section>
 
       <LoyaltyMeter />

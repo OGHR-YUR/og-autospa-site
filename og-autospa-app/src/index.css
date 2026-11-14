@@ -314,15 +314,30 @@ code {
   margin: 1.25rem 0;
   border-left: 4px solid var(--orange);
 }
-.mission-pin h2 { margin-bottom: 0.85rem; }
-.mission-pin p { margin: 0.7rem 0; }
+.mission-pin h2 {
+  margin-bottom: 0.45rem;
+  font-size: 1.35rem;
+}
+.mission-pin p { margin: 0.45rem 0; font-size: 0.92rem; }
+.mission-pin__body:not(.is-open) {
+  max-height: 4.6rem;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent);
+  mask-image: linear-gradient(to bottom, #000 55%, transparent);
+}
+.mission-pin__body:not(.is-open) .mission-pin__close { display: none; }
 .mission-pin__close {
-  margin: 1.15rem 0 0.15rem;
+  margin: 0.85rem 0 0.15rem;
   font-family: var(--font-display);
-  font-size: 1.45rem;
+  font-size: 1.25rem;
   letter-spacing: 0.04em;
   line-height: 1.15;
   color: white;
+}
+.mission-pin__more {
+  margin-top: 0.35rem;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.85rem;
 }
 .callout { margin-bottom: 1rem; color: var(--ink-dim); }
 
