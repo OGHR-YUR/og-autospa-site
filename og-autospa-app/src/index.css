@@ -175,7 +175,7 @@ code {
 .app-main {
   width: min(var(--max), calc(100% - 1.5rem));
   margin: 0 auto;
-  padding: 1.25rem 0 6.5rem;
+  padding: 1.25rem 0 8.5rem;
 }
 
 .bottom-nav {
@@ -212,17 +212,10 @@ code {
 .bottom-nav__label {
   font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
-  transform: translateY(6px);
-  opacity: 0;
-  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.28s ease;
-}
-.bottom-nav__item:hover .bottom-nav__label,
-.bottom-nav__item:focus-visible .bottom-nav__label,
-.bottom-nav__item.is-active .bottom-nav__label {
-  transform: translateY(0);
   opacity: 1;
+  line-height: 1.1;
 }
 .bottom-nav__item.is-active {
   color: white;
@@ -247,6 +240,11 @@ code {
   transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
 }
 .btn:active { transform: scale(0.97); }
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  filter: grayscale(0.35);
+}
 .btn-primary,
 .btn-bubbly {
   color: white;
@@ -312,13 +310,36 @@ code {
   padding: 1rem 1.1rem;
   box-shadow: var(--shadow);
 }
-.mission-pin { margin: 1.25rem 0; }
-.mission-pin blockquote {
-  margin: 0.75rem 0;
-  padding: 0.85rem 1rem;
+.review-flow + .review-flow { margin-top: 0.85rem; }
+.review-flow > .btn { margin-top: 0.75rem; }
+.mission-pin {
+  margin: 1.25rem 0;
   border-left: 4px solid var(--orange);
-  background: rgba(255, 138, 31, 0.08);
-  border-radius: 0 16px 16px 0;
+}
+.mission-pin h2 {
+  margin-bottom: 0.45rem;
+  font-size: 1.35rem;
+}
+.mission-pin p { margin: 0.45rem 0; font-size: 0.92rem; }
+.mission-pin__body:not(.is-open) {
+  max-height: 4.6rem;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent);
+  mask-image: linear-gradient(to bottom, #000 55%, transparent);
+}
+.mission-pin__body:not(.is-open) .mission-pin__close { display: none; }
+.mission-pin__close {
+  margin: 0.85rem 0 0.15rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+  color: white;
+}
+.mission-pin__more {
+  margin-top: 0.35rem;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.85rem;
 }
 .callout { margin-bottom: 1rem; color: var(--ink-dim); }
 
@@ -408,8 +429,77 @@ code {
   grid-template-columns: 1fr 1fr;
   gap: 0.75rem;
 }
+.booking-panel__vehicle {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr 1fr;
+  gap: 0.75rem;
+}
 .booking-panel__total { margin: 0; }
+.photo-field { border: 0; margin: 0; padding: 0; display: grid; gap: 0.45rem; }
+.photo-field legend { color: var(--ink-dim); }
+.photo-picks { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.photo-picks figure {
+  margin: 0;
+  width: 5.5rem;
+  display: grid;
+  gap: 0.25rem;
+}
+.photo-picks img {
+  width: 5.5rem;
+  height: 5.5rem;
+  object-fit: cover;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.25);
+}
+.photo-picks button {
+  border: 0;
+  background: transparent;
+  color: var(--ink-dim);
+  font-size: 0.75rem;
+  cursor: pointer;
+  padding: 0;
+}
+.btn-condition {
+  width: 100%;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.35;
+  color: white;
+  background: rgba(255, 138, 31, 0.16);
+  border: 1px solid rgba(255, 138, 31, 0.75);
+  border-radius: 18px;
+  padding: 0.85rem 1rem;
+}
+.btn-condition.is-selected {
+  background: rgba(255, 138, 31, 0.38);
+  box-shadow: 0 0 0 2px rgba(255, 138, 31, 0.5);
+}
+@media (max-width: 560px) {
+  .booking-panel__vehicle,
+  .booking-panel__row { grid-template-columns: 1fr; }
+}
 .form-status { color: #9dffb0; }
+.form-status--warn { color: #ffb347; }
+.book-toast {
+  position: fixed;
+  left: 50%;
+  top: 5.25rem;
+  transform: translateX(-50%);
+  width: min(var(--max), calc(100% - 1.5rem));
+  z-index: 40;
+  margin: 0;
+  background: #102818;
+  color: #b6ffc9;
+  border: 1px solid #2f8f4e;
+  border-radius: 16px;
+  padding: 0.85rem 1rem;
+  box-shadow: var(--shadow);
+}
+.book-toast.form-status--warn {
+  background: #2a1c0c;
+  color: #ffd7a8;
+  border-color: rgba(255, 138, 31, 0.8);
+}
 .tip-field { border: 0; margin: 0; padding: 0; }
 .tip-field legend { color: var(--ink-dim); margin-bottom: 0.35rem; }
 

@@ -8,6 +8,7 @@ import type { ServiceId } from '../types'
 export function HomePage() {
   const popular = POPULAR_SERVICE_IDS.map((id) => SERVICES.find((s) => s.id === id)!).filter(Boolean)
   const [bookingService, setBookingService] = useState<ServiceId | null>(null)
+  const [missionOpen, setMissionOpen] = useState(false)
 
   return (
     <div className="page page-home">
@@ -16,15 +17,30 @@ export function HomePage() {
         <h1>{BUSINESS.name}</h1>
         <p className="lead">{BUSINESS.whatWeDo}</p>
         <p className="muted">{BUSINESS.whatWeBring}</p>
+        <p>
+          <a className="btn btn-primary" href={BUSINESS.bookingUrl} target="_blank" rel="noreferrer noopener">
+            Book on Acuity
+          </a>
+        </p>
       </header>
 
       <section className="mission-pin" aria-labelledby="mission-title">
-        <p className="eyebrow">Mission</p>
-        <h2 id="mission-title">Pinned for the owner</h2>
-        <blockquote>
-          <p>{BUSINESS.missionStatement}</p>
-        </blockquote>
-        <p className="note">Reminder: replace this placeholder with your real mission statement in <code>src/data/config.ts</code>.</p>
+        <p className="eyebrow">Our mission</p>
+        <h2 id="mission-title">{BUSINESS.name}</h2>
+        <div className={missionOpen ? 'mission-pin__body is-open' : 'mission-pin__body'}>
+          {BUSINESS.missionParagraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+          <p className="mission-pin__close">{BUSINESS.missionClose}</p>
+        </div>
+        <button
+          type="button"
+          className="btn btn-ghost mission-pin__more"
+          aria-expanded={missionOpen}
+          onClick={() => setMissionOpen((open) => !open)}
+        >
+          {missionOpen ? 'Show less' : 'Click for more'}
+        </button>
       </section>
 
       <LoyaltyMeter />
@@ -63,10 +79,12 @@ export function HomePage() {
               Close
             </button>
           </div>
-          <BookingPanel
-            initialServiceId={bookingService}
-            onBooked={() => setBookingService(null)}
-          />
+          <p>
+            <a className="btn btn-primary" href={BUSINESS.bookingUrl} target="_blank" rel="noreferrer noopener">
+              Book on Acuity
+            </a>
+          </p>
+          <BookingPanel initialServiceId={bookingService} />
         </section>
       )}
     </div>

@@ -1,3 +1,5 @@
+const FACEBOOK_REVIEWS = 'https://www.facebook.com/profile.php?id=61574226024258&sk=reviews';
+
 const CONFIG = {
   PHONE: '(385) 346-8125',
   PHONE_E164: '+13853468125',
@@ -12,13 +14,13 @@ const CONFIG = {
     { day: 'Thursday – Saturday', hours: 'Starts from 8 AM until midnight' },
     { day: 'Sunday – Tuesday', hours: 'Closed' }
   ],
-  BOOKING_URL: 'https://example.com/booking',
+  BOOKING_URL: 'https://ogautospa.as.me',
   FORM_ENDPOINT: '',
   SHOP_URL: 'https://11u81s-f0.myshopify.com',
   SOCIAL: {
-    instagram: '',
+    instagram: 'https://www.instagram.com/oscarguerrero230/',
     tiktok: '',
-    facebook: '',
+    facebook: FACEBOOK_REVIEWS,
     google: ''
   },
   SERVICES: [
@@ -67,6 +69,12 @@ function applyConfig() {
     el.href = CONFIG.BOOKING_URL || 'book.html';
   });
 
+  document.querySelectorAll('[data-link="book-newtab"]').forEach(el => {
+    el.href = CONFIG.BOOKING_URL || 'book.html';
+    el.target = '_blank';
+    el.rel = 'noreferrer noopener';
+  });
+
   document.querySelectorAll('[data-link="sms"]').forEach(el => {
     el.href = `sms:${CONFIG.PHONE_E164}`;
   });
@@ -83,6 +91,10 @@ function applyConfig() {
       return;
     }
     el.href = url;
+  });
+
+  document.querySelectorAll('[data-facebook-reviews]').forEach(el => {
+    el.href = FACEBOOK_REVIEWS;
   });
 
   const hoursEl = document.querySelector('[data-hours]');

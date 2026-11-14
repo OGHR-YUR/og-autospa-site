@@ -1,6 +1,8 @@
 import type { LoyaltyReward, ServiceId, ServicePackage } from '../types'
 
 /** Business config mirrored from the O.G. AutoSpa marketing site. */
+const facebookReviewsUrl = 'https://www.facebook.com/profile.php?id=61574226024258&sk=reviews'
+
 export const BUSINESS = {
   name: 'O.G. AutoSpa & Services',
   shortName: 'O.G. AutoSpa',
@@ -14,13 +16,16 @@ export const BUSINESS = {
   depositPercent: 0.5,
   afterHoursFee: 50,
   shopUrl: 'https://11u81s-f0.myshopify.com',
-  bookingUrl: 'https://example.com/booking',
-  /**
-   * Mission statement — PINNED PLACEHOLDER.
-   * Owner: replace this string with your real mission when ready.
-   */
-  missionStatement:
-    '[OWNER MISSION STATEMENT PLACEHOLDER — please provide your mission statement to pin here.]',
+  bookingUrl: 'https://ogautospa.as.me',
+  missionParagraphs: [
+    'Our mission goes beyond detailing vehicles and providing services. It’s about building something meaningful, creating opportunities, and leaving behind a legacy for the next generation.',
+    'One of our biggest motivations is family, especially our children. Everything we work toward, every sacrifice we make, and every long day we put in is driven by the desire to build a better future and show our children that with hard work, dedication, and determination, anything is possible.',
+    'At O.G. AutoSpa & Services, we believe in quality, relationships, and community. We take pride in providing professional detailing and automotive services while building connections with other local businesses, entrepreneurs, and independent service providers.',
+    'We believe our communities are stronger when we support one another. Rather than always turning to major corporations, we want to encourage people to shop local, use each other’s services, build partnerships, and keep opportunities and money within our communities.',
+    'Our vision is to grow alongside the people around us, create opportunities for others, and prove that success means more when everyone has a chance to benefit.',
+    'We’re building more than a business. We’re building a legacy for our family, creating opportunities for our community, and setting an example for the next generation.',
+  ],
+  missionClose: 'Family Driven. Community Focused. Built on Hard Work.',
   tagline: 'Showroom shine. At your door.',
   whatWeDo:
     'Mobile car detailing that comes to you across Salt Lake City and the Salt Lake Valley — washes, interior cleans, polish & wax, and full details at your driveway.',
@@ -29,13 +34,13 @@ export const BUSINESS = {
   aimingFor:
     'Reliable mobile care for everyday drivers and commercial fleets — clear prices, honest work, and a loyalty program that rewards coming back.',
   googleReviewUrl: 'https://g.page/r/REPLACE-WITH-GOOGLE-BUSINESS-REVIEW',
-  facebookReviewUrl: 'https://www.facebook.com/REPLACE-OG-AUTOSPA/reviews',
+  facebookReviewUrl: facebookReviewsUrl,
   /** Yelp not set up yet — slot reserved */
   yelpReviewUrl: '',
   social: {
-    instagram: 'https://instagram.com/REPLACE-OG-AUTOSPA',
+    instagram: 'https://www.instagram.com/oscarguerrero230/',
     tiktok: 'https://tiktok.com/@REPLACE-OG-AUTOSPA',
-    facebook: 'https://facebook.com/REPLACE-OG-AUTOSPA',
+    facebook: facebookReviewsUrl,
     youtube: 'https://youtube.com/@REPLACE-OG-AUTOSPA',
   },
 } as const
