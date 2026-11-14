@@ -43,7 +43,7 @@ export function ContactPage() {
       <section aria-labelledby="social-title">
         <h2 id="social-title">Social</h2>
         <div className="social-row">
-          {SOCIAL_LINKS.map((link) => (
+          {SOCIAL_LINKS.filter((link) => !link.href.includes('REPLACE')).map((link) => (
             <a
               key={link.id}
               className="btn btn-bubbly"
@@ -55,7 +55,6 @@ export function ContactPage() {
             </a>
           ))}
         </div>
-        <p className="note">Placeholder social URLs live in <code>src/data/config.ts</code>.</p>
       </section>
     </div>
   )

@@ -36,7 +36,7 @@ export const BUSINESS = {
   /** Yelp not set up yet — slot reserved */
   yelpReviewUrl: '',
   social: {
-    instagram: 'https://instagram.com/REPLACE-OG-AUTOSPA',
+    instagram: 'https://www.instagram.com/oscarguerrero230/',
     tiktok: 'https://tiktok.com/@REPLACE-OG-AUTOSPA',
     facebook: 'https://facebook.com/REPLACE-OG-AUTOSPA',
     youtube: 'https://youtube.com/@REPLACE-OG-AUTOSPA',

@@ -16,7 +16,7 @@ const CONFIG = {
   FORM_ENDPOINT: '',
   SHOP_URL: 'https://11u81s-f0.myshopify.com',
   SOCIAL: {
-    instagram: '',
+    instagram: 'https://www.instagram.com/oscarguerrero230/',
     tiktok: '',
     facebook: '',
     google: ''
