@@ -16,7 +16,7 @@ export const BUSINESS = {
   depositPercent: 0.5,
   afterHoursFee: 50,
   shopUrl: 'https://11u81s-f0.myshopify.com',
-  bookingUrl: 'https://example.com/booking',
+  bookingUrl: 'https://ogautospa.as.me',
   missionParagraphs: [
     'Our mission goes beyond detailing vehicles and providing services. It’s about building something meaningful, creating opportunities, and leaving behind a legacy for the next generation.',
     'One of our biggest motivations is family, especially our children. Everything we work toward, every sacrifice we make, and every long day we put in is driven by the desire to build a better future and show our children that with hard work, dedication, and determination, anything is possible.',

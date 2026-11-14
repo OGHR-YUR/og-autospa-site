@@ -14,7 +14,7 @@ const CONFIG = {
     { day: 'Thursday – Saturday', hours: 'Starts from 8 AM until midnight' },
     { day: 'Sunday – Tuesday', hours: 'Closed' }
   ],
-  BOOKING_URL: 'https://example.com/booking',
+  BOOKING_URL: 'https://ogautospa.as.me',
   FORM_ENDPOINT: '',
   SHOP_URL: 'https://11u81s-f0.myshopify.com',
   SOCIAL: {
@@ -67,6 +67,12 @@ function applyConfig() {
 
   document.querySelectorAll('[data-link="book"]').forEach(el => {
     el.href = CONFIG.BOOKING_URL || 'book.html';
+  });
+
+  document.querySelectorAll('[data-link="book-newtab"]').forEach(el => {
+    el.href = CONFIG.BOOKING_URL || 'book.html';
+    el.target = '_blank';
+    el.rel = 'noreferrer noopener';
   });
 
   document.querySelectorAll('[data-link="sms"]').forEach(el => {

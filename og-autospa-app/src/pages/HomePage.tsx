@@ -17,6 +17,11 @@ export function HomePage() {
         <h1>{BUSINESS.name}</h1>
         <p className="lead">{BUSINESS.whatWeDo}</p>
         <p className="muted">{BUSINESS.whatWeBring}</p>
+        <p>
+          <a className="btn btn-primary" href={BUSINESS.bookingUrl} target="_blank" rel="noreferrer noopener">
+            Book on Acuity
+          </a>
+        </p>
       </header>
 
       <section className="mission-pin" aria-labelledby="mission-title">
@@ -74,6 +79,11 @@ export function HomePage() {
               Close
             </button>
           </div>
+          <p>
+            <a className="btn btn-primary" href={BUSINESS.bookingUrl} target="_blank" rel="noreferrer noopener">
+              Book on Acuity
+            </a>
+          </p>
           <BookingPanel initialServiceId={bookingService} />
         </section>
       )}
