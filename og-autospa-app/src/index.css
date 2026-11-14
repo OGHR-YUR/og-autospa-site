@@ -310,13 +310,19 @@ code {
   padding: 1rem 1.1rem;
   box-shadow: var(--shadow);
 }
-.mission-pin { margin: 1.25rem 0; }
-.mission-pin blockquote {
-  margin: 0.75rem 0;
-  padding: 0.85rem 1rem;
+.mission-pin {
+  margin: 1.25rem 0;
   border-left: 4px solid var(--orange);
-  background: rgba(255, 138, 31, 0.08);
-  border-radius: 0 16px 16px 0;
+}
+.mission-pin h2 { margin-bottom: 0.85rem; }
+.mission-pin p { margin: 0.7rem 0; }
+.mission-pin__close {
+  margin: 1.15rem 0 0.15rem;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+  color: white;
 }
 .callout { margin-bottom: 1rem; color: var(--ink-dim); }
 

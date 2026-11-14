@@ -19,12 +19,12 @@ export function HomePage() {
       </header>
 
       <section className="mission-pin" aria-labelledby="mission-title">
-        <p className="eyebrow">Mission</p>
-        <h2 id="mission-title">Pinned for the owner</h2>
-        <blockquote>
-          <p>{BUSINESS.missionStatement}</p>
-        </blockquote>
-        <p className="note">Reminder: replace this placeholder with your real mission statement in <code>src/data/config.ts</code>.</p>
+        <p className="eyebrow">Our mission</p>
+        <h2 id="mission-title">{BUSINESS.name}</h2>
+        {BUSINESS.missionParagraphs.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
+        <p className="mission-pin__close">{BUSINESS.missionClose}</p>
       </section>
 
       <LoyaltyMeter />

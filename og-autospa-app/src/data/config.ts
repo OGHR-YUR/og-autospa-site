@@ -15,12 +15,15 @@ export const BUSINESS = {
   afterHoursFee: 50,
   shopUrl: 'https://11u81s-f0.myshopify.com',
   bookingUrl: 'https://example.com/booking',
-  /**
-   * Mission statement — PINNED PLACEHOLDER.
-   * Owner: replace this string with your real mission when ready.
-   */
-  missionStatement:
-    '[OWNER MISSION STATEMENT PLACEHOLDER — please provide your mission statement to pin here.]',
+  missionParagraphs: [
+    'Our mission goes beyond detailing vehicles and providing services. It’s about building something meaningful, creating opportunities, and leaving behind a legacy for the next generation.',
+    'One of our biggest motivations is family, especially our children. Everything we work toward, every sacrifice we make, and every long day we put in is driven by the desire to build a better future and show our children that with hard work, dedication, and determination, anything is possible.',
+    'At O.G. AutoSpa & Services, we believe in quality, relationships, and community. We take pride in providing professional detailing and automotive services while building connections with other local businesses, entrepreneurs, and independent service providers.',
+    'We believe our communities are stronger when we support one another. Rather than always turning to major corporations, we want to encourage people to shop local, use each other’s services, build partnerships, and keep opportunities and money within our communities.',
+    'Our vision is to grow alongside the people around us, create opportunities for others, and prove that success means more when everyone has a chance to benefit.',
+    'We’re building more than a business. We’re building a legacy for our family, creating opportunities for our community, and setting an example for the next generation.',
+  ],
+  missionClose: 'Family Driven. Community Focused. Built on Hard Work.',
   tagline: 'Showroom shine. At your door.',
   whatWeDo:
     'Mobile car detailing that comes to you across Salt Lake City and the Salt Lake Valley — washes, interior cleans, polish & wax, and full details at your driveway.',
