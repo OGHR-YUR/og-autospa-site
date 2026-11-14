@@ -1,6 +1,8 @@
 import type { LoyaltyReward, ServiceId, ServicePackage } from '../types'
 
 /** Business config mirrored from the O.G. AutoSpa marketing site. */
+const facebookReviewsUrl = 'https://www.facebook.com/profile.php?id=61574226024258&sk=reviews'
+
 export const BUSINESS = {
   name: 'O.G. AutoSpa & Services',
   shortName: 'O.G. AutoSpa',
@@ -32,13 +34,13 @@ export const BUSINESS = {
   aimingFor:
     'Reliable mobile care for everyday drivers and commercial fleets — clear prices, honest work, and a loyalty program that rewards coming back.',
   googleReviewUrl: 'https://g.page/r/REPLACE-WITH-GOOGLE-BUSINESS-REVIEW',
-  facebookReviewUrl: 'https://www.facebook.com/profile.php?id=61574226024258',
+  facebookReviewUrl: facebookReviewsUrl,
   /** Yelp not set up yet — slot reserved */
   yelpReviewUrl: '',
   social: {
     instagram: 'https://www.instagram.com/oscarguerrero230/',
     tiktok: 'https://tiktok.com/@REPLACE-OG-AUTOSPA',
-    facebook: 'https://www.facebook.com/profile.php?id=61574226024258',
+    facebook: facebookReviewsUrl,
     youtube: 'https://youtube.com/@REPLACE-OG-AUTOSPA',
   },
 } as const

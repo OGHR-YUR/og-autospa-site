@@ -23,7 +23,7 @@ const PLATFORMS: {
 export function ReviewsPage() {
   const { grantReviewPoints } = useAppStore()
   const [stars, setStars] = useState(5)
-  const [platform, setPlatform] = useState<Platform>('google')
+  const [platform, setPlatform] = useState<Platform>('facebook')
   const [message, setMessage] = useState<string | null>(null)
 
   function submit() {
@@ -43,10 +43,23 @@ export function ReviewsPage() {
         <p className="eyebrow">Feedback</p>
         <h1>Reviews</h1>
         <p className="lead">
-          Pick a star rating, choose where to post, and we’ll send you to Google, Facebook, or Yelp.
-          In-app stars then redirect — simpler and less bug-prone than a native review SDK.
+          Open Facebook reviews from this page. The Facebook button on Contact opens the same reviews.
         </p>
       </header>
+
+      <section className="review-flow" aria-labelledby="facebook-reviews-title">
+        <p className="eyebrow">Facebook</p>
+        <h2 id="facebook-reviews-title">Facebook reviews</h2>
+        <p>Read them here, or open them from the Facebook link. Both go to the same page.</p>
+        <a
+          className="btn btn-primary"
+          href={BUSINESS.facebookReviewUrl}
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          Open Facebook reviews
+        </a>
+      </section>
 
       <section className="review-flow">
         <p className="eyebrow">Your rating</p>

@@ -1,3 +1,5 @@
+const FACEBOOK_REVIEWS = 'https://www.facebook.com/profile.php?id=61574226024258&sk=reviews';
+
 const CONFIG = {
   PHONE: '(385) 346-8125',
   PHONE_E164: '+13853468125',
@@ -18,7 +20,7 @@ const CONFIG = {
   SOCIAL: {
     instagram: 'https://www.instagram.com/oscarguerrero230/',
     tiktok: '',
-    facebook: 'https://www.facebook.com/profile.php?id=61574226024258',
+    facebook: FACEBOOK_REVIEWS,
     google: ''
   },
   SERVICES: [
@@ -83,6 +85,10 @@ function applyConfig() {
       return;
     }
     el.href = url;
+  });
+
+  document.querySelectorAll('[data-facebook-reviews]').forEach(el => {
+    el.href = FACEBOOK_REVIEWS;
   });
 
   const hoursEl = document.querySelector('[data-hours]');
