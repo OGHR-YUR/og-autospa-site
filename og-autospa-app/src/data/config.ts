@@ -32,13 +32,13 @@ export const BUSINESS = {
   aimingFor:
     'Reliable mobile care for everyday drivers and commercial fleets — clear prices, honest work, and a loyalty program that rewards coming back.',
   googleReviewUrl: 'https://g.page/r/REPLACE-WITH-GOOGLE-BUSINESS-REVIEW',
-  facebookReviewUrl: 'https://www.facebook.com/REPLACE-OG-AUTOSPA/reviews',
+  facebookReviewUrl: 'https://www.facebook.com/profile.php?id=61574226024258',
   /** Yelp not set up yet — slot reserved */
   yelpReviewUrl: '',
   social: {
     instagram: 'https://www.instagram.com/oscarguerrero230/',
     tiktok: 'https://tiktok.com/@REPLACE-OG-AUTOSPA',
-    facebook: 'https://facebook.com/REPLACE-OG-AUTOSPA',
+    facebook: 'https://www.facebook.com/profile.php?id=61574226024258',
     youtube: 'https://youtube.com/@REPLACE-OG-AUTOSPA',
   },
 } as const

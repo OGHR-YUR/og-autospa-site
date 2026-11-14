@@ -18,7 +18,7 @@ const CONFIG = {
   SOCIAL: {
     instagram: 'https://www.instagram.com/oscarguerrero230/',
     tiktok: '',
-    facebook: '',
+    facebook: 'https://www.facebook.com/profile.php?id=61574226024258',
     google: ''
   },
   SERVICES: [
